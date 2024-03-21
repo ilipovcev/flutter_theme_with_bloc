@@ -10,9 +10,8 @@ class CounterState extends Equatable {
 
   CounterState copyWith({
     int? value,
-  }) {
-    return CounterState(
-      value: value ?? this.value,
-    );
-  }
+  }) =>
+      CounterState(
+        value: value ?? this.value,
+      );
 }

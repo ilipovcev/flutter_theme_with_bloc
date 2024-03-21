@@ -29,10 +29,9 @@ class ThemeState extends Equatable {
   ThemeState copyWith({
     ThemeMode? themeMode,
     Color? colorSeed,
-  }) {
-    return ThemeState(
-      themeMode: themeMode ?? this.themeMode,
-      colorSeed: colorSeed ?? this.colorSeed,
-    );
-  }
+  }) =>
+      ThemeState(
+        themeMode: themeMode ?? this.themeMode,
+        colorSeed: colorSeed ?? this.colorSeed,
+      );
 }

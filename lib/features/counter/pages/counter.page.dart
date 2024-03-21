@@ -7,10 +7,8 @@ class CounterPage extends StatelessWidget {
   const CounterPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CounterBloc(),
-      child: const CounterView(title: 'Theme with bloc demo'),
-    );
-  }
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => CounterBloc(),
+        child: const CounterView(title: 'Theme with bloc demo'),
+      );
 }

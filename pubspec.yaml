@@ -18,7 +18,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.0
+  dart_code_linter:
+    git:
+      url: https://github.com/The-Redhat/dart-code-linter.git
+      ref: fix_analyzer_6.0_errors
+  lint: ^2.3.0
 
 flutter:
 

@@ -9,48 +9,44 @@ class CounterView extends StatelessWidget {
   final String title;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
-        actions: [
-          _BrightnessButton(
-            handleBrightnessChange: (useLightMode) => context
-                .read<ThemeBloc>()
-                .add(
-                  ThemeEventChangeThemeMode(
-                    themeMode: useLightMode ? ThemeMode.light : ThemeMode.dark,
-                  ),
-                ),
-          ),
-        ],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            BlocBuilder<CounterBloc, CounterState>(
-              builder: (context, state) {
-                return Text(
-                  '${state.value}',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                );
-              },
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(title),
+          actions: [
+            _BrightnessButton(
+              handleBrightnessChange: (useLightMode) =>
+                  context.read<ThemeBloc>().add(
+                        ThemeEventChangeThemeMode(
+                          themeMode:
+                              useLightMode ? ThemeMode.light : ThemeMode.dark,
+                        ),
+                      ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => context.read<CounterBloc>().add(const Increment()),
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'You have pushed the button this many times:',
+              ),
+              BlocBuilder<CounterBloc, CounterState>(
+                builder: (context, state) => Text(
+                  '${state.value}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => context.read<CounterBloc>().add(const Increment()),
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+        ),
+      );
 }
 
 class _BrightnessButton extends StatelessWidget {

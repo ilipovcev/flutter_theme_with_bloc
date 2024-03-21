@@ -7,20 +7,16 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => ThemeBloc(),
-      child: BlocBuilder<ThemeBloc, ThemeState>(
-        builder: (context, state) {
-          return MaterialApp(
+  Widget build(BuildContext context) => BlocProvider(
+        create: (_) => ThemeBloc(),
+        child: BlocBuilder<ThemeBloc, ThemeState>(
+          builder: (context, state) => MaterialApp(
             title: 'Flutter Demo',
             theme: state.lightTheme,
             darkTheme: state.darkTheme,
             themeMode: state.themeMode,
             home: const CounterPage(),
-          );
-        },
-      ),
-    );
-  }
+          ),
+        ),
+      );
 }
