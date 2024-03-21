@@ -23,6 +23,13 @@ class CounterView extends StatelessWidget {
                         ),
                       ),
             ),
+            IconButton(
+              icon: const Icon(Icons.color_lens_rounded),
+              tooltip: 'Color pick',
+              onPressed: () => context.read<ThemeBloc>().add(
+                    const ThemeEventChangeColorSeed(),
+                  ),
+            ),
           ],
         ),
         body: Center(

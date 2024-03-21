@@ -11,3 +11,7 @@ class ThemeEventChangeThemeMode extends ThemeEvent {
 
   final ThemeMode themeMode;
 }
+
+class ThemeEventChangeColorSeed extends ThemeEvent {
+  const ThemeEventChangeColorSeed();
+}

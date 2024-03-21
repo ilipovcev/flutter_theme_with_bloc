@@ -19,5 +19,11 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
         state.copyWith(themeMode: event.themeMode),
       ),
     );
+
+    on<ThemeEventChangeColorSeed>(
+      (event, emit) => emit(
+        state.copyWith(colorSeed: getRandomColor()),
+      ),
+    );
   }
 }
