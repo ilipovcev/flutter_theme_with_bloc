@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theme_bloc/core/theme/controller/theme_bloc.dart';
 import 'package:theme_bloc/features/counter/controllers/counter_bloc.dart';
+import 'package:theme_bloc/features/counter/widgets/counter_control_buttons.dart';
 
 class CounterView extends StatelessWidget {
   const CounterView({super.key, required this.title});
@@ -15,13 +16,11 @@ class CounterView extends StatelessWidget {
           title: Text(title),
           actions: [
             _BrightnessButton(
-              handleBrightnessChange: (useLightMode) =>
-                  context.read<ThemeBloc>().add(
-                        ThemeEventChangeThemeMode(
-                          themeMode:
-                              useLightMode ? ThemeMode.light : ThemeMode.dark,
-                        ),
-                      ),
+              handleBrightnessChange: (useLightMode) => context.read<ThemeBloc>().add(
+                    ThemeEventChangeThemeMode(
+                      themeMode: useLightMode ? ThemeMode.light : ThemeMode.dark,
+                    ),
+                  ),
             ),
             IconButton(
               icon: const Icon(Icons.color_lens_rounded),
@@ -48,11 +47,7 @@ class CounterView extends StatelessWidget {
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => context.read<CounterBloc>().add(const Increment()),
-          tooltip: 'Increment',
-          child: const Icon(Icons.add),
-        ),
+        floatingActionButton: const CounterControlButtons(),
       );
 }
 
@@ -70,9 +65,7 @@ class _BrightnessButton extends StatelessWidget {
       preferBelow: true,
       message: 'Toggle brightness',
       child: IconButton(
-        icon: isBright
-            ? const Icon(Icons.dark_mode_outlined)
-            : const Icon(Icons.light_mode_outlined),
+        icon: isBright ? const Icon(Icons.dark_mode_outlined) : const Icon(Icons.light_mode_outlined),
         onPressed: () => handleBrightnessChange(!isBright),
       ),
     );

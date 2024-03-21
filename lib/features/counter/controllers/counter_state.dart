@@ -3,6 +3,10 @@ part of 'counter_bloc.dart';
 class CounterState extends Equatable {
   const CounterState({required this.value});
 
+  factory CounterState.fromMap(Map<String, dynamic> map) => CounterState(
+        value: map['value'] as int,
+      );
+
   final int value;
 
   @override
@@ -14,4 +18,8 @@ class CounterState extends Equatable {
       CounterState(
         value: value ?? this.value,
       );
+
+  Map<String, dynamic> toMap() => {
+        'value': value,
+      };
 }

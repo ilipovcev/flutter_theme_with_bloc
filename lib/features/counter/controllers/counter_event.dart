@@ -11,3 +11,7 @@ class Increment extends CounterEvent {
 class Decrement extends CounterEvent {
   const Decrement();
 }
+
+class Clear extends CounterEvent {
+  const Clear();
+}
