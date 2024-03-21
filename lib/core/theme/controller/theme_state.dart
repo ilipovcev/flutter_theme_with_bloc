@@ -5,6 +5,10 @@ class ThemeState extends Equatable {
     required this.themeMode,
     required this.colorSeed,
   });
+  factory ThemeState.fromMap(Map<String, dynamic> map) => ThemeState(
+        themeMode: ThemeMode.values.byName(map['themeMode'] as String),
+        colorSeed: Color(map['colorSeed'] as int),
+      );
 
   final ThemeMode themeMode;
   final Color colorSeed;
@@ -34,4 +38,9 @@ class ThemeState extends Equatable {
         themeMode: themeMode ?? this.themeMode,
         colorSeed: colorSeed ?? this.colorSeed,
       );
+
+  Map<String, dynamic> toMap() => {
+        'themeMode': themeMode.name,
+        'colorSeed': colorSeed.value,
+      };
 }
