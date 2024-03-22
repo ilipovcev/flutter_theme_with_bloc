@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:synaptik_theme_manager/synaptik_theme_manager.dart';
 import 'package:theme_bloc/app.dart';
+import 'package:theme_manager/theme_manager.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -481,15 +481,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  synaptik_theme_manager:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: ee32d6215028f1b34be03038f761ff636e28b31e
-      url: "https://github.com/ilipovcev/theme_manager"
-    source: git
-    version: "0.0.1"
   synchronized:
     dependency: transitive
     description:
@@ -514,6 +505,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
+  theme_manager:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "98697590b29e71e11cef93c08129af9fcb89c801"
+      url: "https://github.com/ilipovcev/theme_manager"
+    source: git
+    version: "0.0.1"
   typed_data:
     dependency: transitive
     description:

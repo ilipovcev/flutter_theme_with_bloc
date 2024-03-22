@@ -15,7 +15,7 @@ dependencies:
   equatable: ^2.0.5
   hydrated_bloc: ^9.1.4
   path_provider: ^2.1.2
-  synaptik_theme_manager:
+  theme_manager:
     git: https://github.com/ilipovcev/theme_manager
 
 dev_dependencies:

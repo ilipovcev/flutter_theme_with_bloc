@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:synaptik_theme_manager/synaptik_theme_manager.dart';
 import 'package:theme_bloc/features/counter/controllers/counter_bloc.dart';
 import 'package:theme_bloc/features/counter/widgets/counter_control_buttons.dart';
+import 'package:theme_manager/theme_manager.dart';
 
 class CounterView extends StatelessWidget {
   const CounterView({super.key, required this.title});
@@ -19,6 +19,11 @@ class CounterView extends StatelessWidget {
               handleBrightnessChange: (useLightMode) => context.switchThemeMode(
                 useLightMode ? ThemeMode.light : ThemeMode.dark,
               ),
+            ),
+            IconButton(
+              icon: const Icon(Icons.brightness_6_rounded),
+              tooltip: 'System brightness',
+              onPressed: () => context.switchThemeMode(ThemeMode.system),
             ),
             IconButton(
               icon: const Icon(Icons.color_lens_rounded),
